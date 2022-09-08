@@ -1,0 +1,40 @@
+.agent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    grid-gap: 10px;
+    .mat-checkbox{
+        margin-right: 20px;
+    }
+    @media screen and (max-width:586px) {
+        grid-template-columns: 100%;
+    }
+
+}
+.btn-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width:586px) {
+        flex-direction: column;
+    }
+    .save-btn{
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        @media screen and (min-width:768px) {
+                width: 140px;
+                margin: 20px 15px;
+        }
+    }
+    .color-btn{
+        outline: #2887ED;
+        @media screen and (max-width:586px) {
+            margin-top: 10px;
+        }
+    }
+}
+

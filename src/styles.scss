@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-form-field{
+    width: 100%;
+}
+.mat-error{
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width:586px) {
+    .mat-dialog-container{
+        max-height: calc(100vh - 30px) !important;
+        overflow-y: auto !important;
+    }
+}
+
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background{
+            background-color: #2887ED;
+        }

@@ -1,0 +1,38 @@
+<form [formGroup]="configurationForm" class="comfig">
+    <h1>Add Configuration</h1>
+    <!--Name input-->
+    <div>
+        <mat-form-field>
+            <mat-label for="name">Name</mat-label>
+            <input matInput type="text" formControlName="name" class="form-control" required
+                [ngClass]="{ 'is-invalid': submitted && configurationFormControls['name'].errors }" />
+        </mat-form-field>
+        <div *ngIf="submitted && configurationFormControls['name'].errors" class="invalid-feedback">
+            <mat-error *ngIf="configurationFormControls['name'].errors['required']">Name is required</mat-error>
+        </div>
+    </div>
+    <!--Description input-->
+    <div>
+        <mat-form-field>
+            <mat-label for="description">Description</mat-label>
+            <input matInput type="text" formControlName="description" class="form-control" required
+                [ngClass]="{ 'is-invalid': submitted && configurationFormControls['description'].errors }" />
+        </mat-form-field>
+        <div *ngIf="submitted && configurationFormControls['description'].errors" class="invalid-feedback">
+            <mat-error *ngIf="configurationFormControls['description'].errors['required']">Description is required</mat-error>
+        </div>
+    </div>
+    
+    <!--Active checkbox-->
+    <div>
+        <mat-checkbox formControlName="active" class="form-control" (change)="setCheckboxControlValue($event,'active')"
+            [ngClass]="{ 'is-invalid': submitted && configurationFormControls['active'].errors }"></mat-checkbox>
+        <mat-label for="active">Active</mat-label>
+    </div>
+    <div class="btn-align">
+        <button class="save-btn" mat-raised-button color="primary" (click)="addConfiguration()">Create</button>
+        <button class="save-btn color-btn" mat-stroked-button (click)="close()">Cancel</button>
+    </div>
+
+
+</form>

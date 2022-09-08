@@ -1,0 +1,102 @@
+ng-deep.crwaler-form-back-btn{
+    margin: 20px !important;
+}
+.crwlform{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    margin: auto;
+    width: 700px;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    grid-gap: 40px;
+    margin-top: 30px;
+    @media screen and (max-width:586px) {
+        width: auto;
+    }
+    .mat-form-field{
+        width: 100%;
+    }
+    .grid-align{
+        display: grid;
+        grid-template-columns: 550px 150px;
+        grid-template-rows: auto;
+        grid-column-gap: 10px;
+        @media screen and (max-width:586px) {
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+        }
+        .mat-form-field {
+            width: 100%;
+        }
+        .mat-focus-indicator{
+            height: 50px;
+            padding: 10px;
+            width: 140px;
+            @media screen and (max-width:586px) {
+                width: 100%;
+            }
+        }
+    }
+    .grid-align.wrapper-check{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .mat-checkbox{
+            margin-right: 20px;
+        }
+        @media screen and (max-width:586px) {
+            display: grid;
+            row-gap: 20px;
+        }
+    }
+    .btn-align{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width:586px) {
+            flex-direction: column;
+        }
+        .save-btn{
+            height: 50px;
+            width: 100%;
+            @media screen and (min-width:768px) {
+                    width: 140px;
+                    margin: 0px 15px;
+            }
+        }
+        .color-btn{
+            outline: #2887ED;
+            @media screen and (max-width:586px) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+}
+.spinr{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    top: -14px;
+    right: -7px;
+    .spin{
+        width: 32px !important;
+        height: 32px !important;
+        svg{
+            width: 32px !important;
+            height: 32px !important;
+        }
+    }
+}
+:host{
+    ::ng-deep{
+        .mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode=indeterminate] svg{
+            width: 32px !important;
+                    height: 32px !important;
+        }
+    }
+}

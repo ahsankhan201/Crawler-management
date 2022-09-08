@@ -1,0 +1,86 @@
+<form [formGroup]="agentForm">
+    <h1>Add Agent</h1>
+    <div class="agent">
+        <!--Name input-->
+        <div>
+            <mat-form-field>
+                <mat-label for="name">Name</mat-label>
+                <input matInput type="text" formControlName="name" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['name'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['name'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['name'].errors['required']">Name is required</mat-error>
+            </div>
+        </div>
+        <!--Description input-->
+        <div>
+            <mat-form-field>
+                <mat-label for="description">Description</mat-label>
+                <input matInput type="text" formControlName="description" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['description'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['description'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['description'].errors['required']">Description is required
+                </mat-error>
+            </div>
+        </div>
+        <!--Identification input-->
+        <diV>
+            <mat-form-field>
+                <mat-label for="identification">Identification</mat-label>
+                <input matInput type="text" formControlName="identification" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['identification'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['identification'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['identification'].errors['required']">Identification is required
+                </mat-error>
+            </div>
+        </diV>
+        <!--MultiloginId input-->
+        <div>
+            <mat-form-field>
+                <mat-label for="multilogin_id">Multi login Id</mat-label>
+                <input matInput type="text" formControlName="multilogin_id" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['multilogin_id'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['multilogin_id'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['multilogin_id'].errors['required']">Multi Login Id is required
+                </mat-error>
+            </div>
+        </div>
+        <!--MultiloginProfile input-->
+        <div>
+            <mat-form-field>
+                <mat-label for="multilogin_profile">Multi login Profile</mat-label>
+                <input matInput type="text" formControlName="multilogin_profile" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['multilogin_profile'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['multilogin_profile'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['multilogin_profile'].errors['required']">Multi Login Profile is
+                    required
+                </mat-error>
+            </div>
+        </div>
+        <!--Location input-->
+        <div>
+            <mat-form-field>
+                <mat-label for="location">Location</mat-label>
+                <input matInput type="text" formControlName="location" class="form-control" required
+                    [ngClass]="{ 'is-invalid': submitted && agentFormControls['location'].errors }" />
+            </mat-form-field>
+            <div *ngIf="submitted && agentFormControls['location'].errors" class="invalid-feedback">
+                <mat-error *ngIf="agentFormControls['location'].errors['required']">Location is required</mat-error>
+            </div>
+        </div>
+        <!--Active checkbox-->
+        <div>
+            <mat-checkbox formControlName="active" class="form-control" (change)="setCheckboxControlValue($event,'active')"
+                [ngClass]="{ 'is-invalid': submitted && agentFormControls['active'].errors }"></mat-checkbox>
+            <mat-label for="active">Active</mat-label>
+        </div>
+    </div>
+    <div class="btn-align">
+        <button class="save-btn" mat-raised-button color="primary" (click)="addAgent()">Create</button>
+        <button class="save-btn color-btn" mat-stroked-button (click)="close()">Cancel</button>
+    </div>
+</form>
